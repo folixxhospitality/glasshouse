@@ -1,0 +1,51 @@
+  /* Preloader */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+  }
+  #preloader svg {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  #preloader .fluid {
+    stroke: url(#gold-silver-gradient);
+    stroke-width: 4;
+    fill: none;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: flow 3s infinite linear;
+  }
+  @keyframes flow {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  #preloader .text-container {
+    color: #b7b4ac;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(22, end); /* Typing effect only */
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 14ch;
+    }
+  }
+  body.hidden {
+    overflow: hidden; /* Prevent scrolling while preloader is active */
+  }

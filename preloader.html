@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glass House Preloader</title>
+  <style>
+    body {
+      text-transform: uppercase;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: #000;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      overflow: hidden;
+    }
+    svg {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+    .fluid {
+      stroke: url(#gold-silver-gradient);
+      stroke-width: 4;
+      fill: none;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: flow 3s infinite linear;
+    }
+    @keyframes flow {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .text-container {
+      color: #b7b4ac;
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(22, end); /* Typing effect only */
+    }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 14ch; /* Adjust width to fit "The Glass House" */
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <defs>
+      <!-- Gold and Silver Gradient -->
+      <linearGradient id="gold-silver-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c2b197" /> <!-- Silver -->
+        <stop offset="50%" stop-color="#1ca3ec" /> <!-- Blue -->
+        <stop offset="100%" stop-color="#b7b4ac" /> <!-- Silver -->
+      </linearGradient>
+    </defs>
+    <!-- Traced Path -->
+    <path
+      class="fluid"
+      d="M 73,43 72,44 72,347 196,347 197,346 197,320 196,319 101,319 100,318 100,73 101,72 457,72 458,73 458,98 457,99 127,99 127,292 346,292 347,293 347,294 348,295 347,296 348,297 348,298 347,299 347,304 348,305 348,339 347,340 347,343 348,344 348,347 430,347 431,346 431,265 430,264 377,264 376,263 376,238 377,237 457,237 458,238 458,373 457,374 308,374 307,373 307,319 279,319 279,403 485,403 486,402 486,209 348,209 348,263 347,264 156,264 155,263 155,128 156,127 486,127 486,44 485,43 Z"
+    ></path>
+  </svg>
+  <div class="text-container">The Glass House</div>
+</body>
+</html>
